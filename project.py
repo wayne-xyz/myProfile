@@ -11,3 +11,12 @@ def main():
 if __name__=="__main__":
     app.run(debug=True,port=8000)
 
+
+def check_email():
+    return True
+
+def check_url():
+    return True
+
+def check_jsonfile():
+    return True

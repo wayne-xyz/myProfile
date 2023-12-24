@@ -4,8 +4,8 @@
     "bio": "Passionate about creating web applications and exploring new technologies.",
     "contact": {
       "email": "john.doe@example.com",
-      "phone": "+123 456 7890",
-      "website": "https://www.johndoe.com"
+      "linkedin": "https://www.johndoe.com",
+      "github": "https://www.github.com/livingspring"
     },
     "skills": ["HTML5", "CSS3", "JavaScript", "Python", "React"],
     "projects": [
