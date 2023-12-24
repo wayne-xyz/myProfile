@@ -1,0 +1,23 @@
+{
+    "name": "Wayne J.",
+    "title": "Web Developer",
+    "bio": "Passionate about creating web applications and exploring new technologies.",
+    "contact": {
+      "email": "john.doe@example.com",
+      "phone": "+123 456 7890",
+      "website": "https://www.johndoe.com"
+    },
+    "skills": ["HTML5", "CSS3", "JavaScript", "Python", "React"],
+    "projects": [
+      {
+        "title": "Portfolio Website",
+        "description": "Built a personal portfolio website to showcase my skills and projects.",
+        "url": "https://www.johndoe.com/portfolio"
+      },
+      {
+        "title": "Task Manager App",
+        "description": "Developed a task manager application using React and Redux.",
+        "url": "https://github.com/johndoe/task-manager"
+      }
+    ]
+}
