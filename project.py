@@ -6,7 +6,7 @@ import validators
 
 app=Flask(__name__)
 
-#function that can check the personal email is valid
+#checking the personal email is valid
 def check_email(email):
     # Define the regular expression pattern for a valid email
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
@@ -16,7 +16,7 @@ def check_email(email):
     # If there is a match, the email is valid; otherwise, it's not
     return bool(match)
 
-#function that can check the url
+#checking the url from json file with the keylist
 def check_url(json_data,key_list):
     try:
         urls=[]
@@ -41,7 +41,7 @@ def check_url(json_data,key_list):
         print(f"Error checking URL validity: {e}")
         return False
     
-# this function for checking keys in json file 
+#checking keys in json file should same as the template
 def check_jsonfile(json_data):
     try:
         with open("example.json","r") as example_file:
