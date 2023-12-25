@@ -79,6 +79,7 @@ def test_check_email():
     assert check_email("good")==False
     assert check_email("@good")==False
     assert check_email("hello@outlook.com")==True
+    assert check_email("hell@ooog")==False
 
 def test_check_jsonfile():
     assert check_jsonfile(example1)==False
