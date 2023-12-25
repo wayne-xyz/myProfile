@@ -11,7 +11,7 @@
     "skills": ["Swift","HTML5", "CSS3", "JavaScript", "Python", "React"],
     "projects": [
       {
-        "title": "Profile Website",
+        "title": "Pesonal Website",
         "description": "Built a personal portfolio website to showcase my skills and projects with Python and Flask",
         "url": "https://github.com/livingspring/myProfile"
       },
