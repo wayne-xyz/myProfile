@@ -1,7 +1,6 @@
 from flask import Flask,render_template
 import re
 import json
-import validators
 
 
 app=Flask(__name__)
@@ -33,7 +32,8 @@ def check_url(json_data,key_list):
         # run the recursive function findout all the urls
         traverse(json_data)
         for url in urls: 
-           if validators.url(url)==False: # validate all the urls
+            url_pattern = re.compile(r'^https?://\S+$', re.IGNORECASE)
+            if bool(url_pattern.match(url))==False: # validate all the urls
                return False
         return True
     except Exception as e:

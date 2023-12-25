@@ -57,7 +57,7 @@ example3={
     "contact": {
       "email": "rongwei.ji@outlook.com",
       "linkedin": "https://www.linkedin.com/in/rongweiji",
-      "github": "co"
+      "github": "github.com/livingspring"
     },
     "skills": ["Swift","HTML5", "CSS3", "JavaScript", "Python", "React"],
     "projects": [
@@ -83,6 +83,7 @@ def test_check_email():
 def test_check_jsonfile():
     assert check_jsonfile(example1)==False
     assert check_jsonfile(example2)==True
+    assert check_jsonfile(example3)==True
 
 def test_check_url():
     assert check_url(example3,["linkedin","github","url"])==False
