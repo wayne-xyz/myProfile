@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Personal Website</title>
     <style>
+        .w-32 {
+            width: 8rem;
+        }
+        .h-32 {
+            height: 8rem;
+        }
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+        .circle-img {
+            border-radius: 50%;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -22,7 +34,10 @@
             margin: 2em auto;
             padding: 0 20px;
         }
-        h1, h2, h3 {
+        h1{
+            color: #fff;
+        }
+        h2, h3 {
             color: #333;
         }
         footer {
@@ -39,6 +54,7 @@
 <body>
 
     <header>
+        <img src="https://avatars.githubusercontent.com/u/8085091?v=4" alt="yuanx" class="circle-img w-32 h-32 mb-4">
         <h1>{{ name }}</h1>
         <p>Web Developer{{ name }}</p>
     </header>

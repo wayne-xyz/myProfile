@@ -12,8 +12,8 @@
     "projects": [
       {
         "title": "Portfolio Website",
-        "description": "Built a personal portfolio website to showcase my skills and projects with Python and Flask",
-        "url": "https://github.com/livingspring/myProfile"
+        "description": "Built a personal portfolio website to showcase my skills and projects.",
+        "url": "https://www.johndoe.com/portfolio"
       },
       {
         "title": "Task Manager App",
