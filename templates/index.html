@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - Personal Website</title>
     <style>
+        /* Apply CSS to make the list items display horizontally */
+        ul.horizontal-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        ul.horizontal-list li {
+            float: left;
+            margin-right: 10px; /* Adjust the margin between items as needed */
+        }
+
         .w-32 {
             width: 8rem;
         }
@@ -54,29 +67,37 @@
 <body>
 
     <header>
-        <img src="https://avatars.githubusercontent.com/u/8085091?v=4" alt="yuanx" class="circle-img w-32 h-32 mb-4">
-        <h1>{{ name }}</h1>
-        <p>Web Developer{{ name }}</p>
+        <img src="{{data.photo}}" alt="yuanx" class="circle-img w-32 h-32 mb-4">
+        <h1>{{ data.name }}</h1>
+        <p>{{ data.title }}</p>
     </header>
 
     <section>
         <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
+        <p>{{data.bio}}</p>
 
         <h2>Skills</h2>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <!-- Add more skills as needed -->
+        <ul class="horizontal-list">
+            {% for skill in data.skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
         </ul>
 
         <h2>Projects</h2>
-        <p>Describe some of the projects you have worked on.</p>
+        <ul>
+            {% for project in data.projects %}
+                <li>
+                    <strong>{{ project.title }}</strong><br>
+                    Description: {{ project.description }}<br>
+                    URL: <a href="{{ project.url }}" target="_blank">{{ project.url }}</a>
+                </li>
+            {% endfor %}
+        </ul>
 
         <h2>Contact</h2>
-        <p>Email: your.email@example.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/rongweiji/" target="_blank">Your LinkedIn Profile</a></p>
+        <p>Email: {{data.contact.email}}</p>
+        <p>LinkedIn: <a href="{{data.contact.linkedin}}" target="_blank">LinkedIn</a></p>
+        <p>Github: <a href="{{data.contact.github}}" target="_blank">Github</a></p>
     </section>
 
     <footer>

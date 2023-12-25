@@ -1,7 +1,7 @@
 from flask import Flask,render_template
 import re
 import json
-from urllib.parse import urlparse
+import validators
 
 
 app=Flask(__name__)
@@ -17,21 +17,30 @@ def check_email(email):
     return bool(match)
 
 #function that can check the url
-def check_url(url):
+def check_url(json_data,key_list):
     try:
-        # Parse the URL
-        parsed_url = urlparse(url)
-        # Check if the scheme (protocol) is present and either "http" or "https"
-        if parsed_url.scheme and parsed_url.scheme in ('http', 'https'):
-            return True
-        else:
-            return False
+        urls=[]
+        # Recursive function to traverse the JSON data
+        def traverse(obj):
+            if isinstance(obj, list):
+                for item in obj:
+                    traverse(item)
+            elif isinstance(obj, dict):
+                for key, value in obj.items():
+                    if key in key_list:urls.append(value)
+                    elif isinstance(value, (list, dict)):
+                        traverse(value)
+        # run the recursive function findout all the urls
+        traverse(json_data)
+        for url in urls: 
+           if validators.url(url)==False: # validate all the urls
+               return False
+        return True
     except Exception as e:
         # An exception may be raised for malformed URLs
         print(f"Error checking URL validity: {e}")
         return False
     
-
 # this function for checking keys in json file 
 def check_jsonfile(json_data):
     try:
@@ -42,19 +51,22 @@ def check_jsonfile(json_data):
         # Handle file not found or invalid JSON file
         return False    
     
-
+#main function to render the main page of the profile website
 @app.route("/")
 def main():
     try:
         with open("person.json","r") as file:
             jsondata= json.load(file)
-            if check_jsonfile(jsondata) and check_email(jsondata["contact"]["email"]):
+            if check_jsonfile(jsondata) and check_email(jsondata["contact"]["email"]) and check_url(jsondata,["linkedin","github","url"]):
                 print("json file valided")
+                return render_template("index.html", data=jsondata)
             else:
                 print("something wrong with your json file")
-        return render_template("index.html", name="Wayne J.")
-    except (FileNotFoundError, json.JSONDecodeError):
-        print ("Json erro")
+                return four_o_four()
+    except :
+        print ("Something erro")
+        return four_o_four()
+        
     
 @app.route("/404")
 def four_o_four():
