@@ -1,8 +1,10 @@
 # myProfile
-#### Video Demo <>
+#### Video Demo <https://youtu.be/HL5kcdTuRds>
 Neat personal website
 #### Description
+<img src="resource/user.png" alt="drawing" width="50"/></p>
 This is a web application for building your own personal website with Flask.
+
 ## Usage
 - Read and install the library in requirments.txt
 - Using your own `person.json` file to show your own information, the keys should same as the examples
