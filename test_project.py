@@ -67,7 +67,7 @@ example3={
         "url": "https://github.com/livingspring/myProfile"
       },
       {
-        "title": "VoiceTranslator App",
+        "title": "VoiceTranslator App and Server",
         "description": "The Voice Translator App and Server is a project that enables users to interactively translate spoken language using their own voice, with Python, Swift, XTTS,Fastapi,iOS.",
         "url": "https://github.com/livingspring/Voice-Translator"
       }
@@ -75,8 +75,8 @@ example3={
 }
 
 def test_check_email():
-    assert check_email("nihao@")==False
-    assert check_email("good")==False
+    assert check_email("nihao@email")==False
+    assert check_email("goodemail")==False
     assert check_email("@good")==False
     assert check_email("hello@outlook.com")==True
     assert check_email("hell@ooog")==False
